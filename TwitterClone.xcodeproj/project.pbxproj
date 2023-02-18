@@ -12,13 +12,16 @@
 		A4EC10D3F368CA25B1047D7A /* Pods_TwitterCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830CD3124296EF8D47811D9 /* Pods_TwitterCloneTests.framework */; };
 		D1E8688029A12F600019B349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8687F29A12F600019B349 /* AppDelegate.swift */; };
 		D1E8688229A12F600019B349 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8688129A12F600019B349 /* SceneDelegate.swift */; };
-		D1E8688429A12F600019B349 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8688329A12F600019B349 /* ViewController.swift */; };
+		D1E8688429A12F600019B349 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8688329A12F600019B349 /* MainTabbarViewController.swift */; };
 		D1E8688929A12F610019B349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1E8688829A12F610019B349 /* Assets.xcassets */; };
 		D1E8688C29A12F610019B349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1E8688A29A12F610019B349 /* LaunchScreen.storyboard */; };
 		D1E8689729A12F610019B349 /* TwitterCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8689629A12F610019B349 /* TwitterCloneTests.swift */; };
 		D1E868A129A12F610019B349 /* TwitterCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E868A029A12F610019B349 /* TwitterCloneUITests.swift */; };
 		D1E868A329A12F610019B349 /* TwitterCloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E868A229A12F610019B349 /* TwitterCloneUITestsLaunchTests.swift */; };
 		D1E868B229A131E50019B349 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E868B129A131E50019B349 /* HomeViewController.swift */; };
+		D1E868B429A132580019B349 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E868B329A132580019B349 /* SearchViewController.swift */; };
+		D1E868B629A132690019B349 /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E868B529A132690019B349 /* NotificationsViewController.swift */; };
+		D1E868B829A132750019B349 /* DirectMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E868B729A132750019B349 /* DirectMessagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,7 @@
 		D1E8687C29A12F600019B349 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E8687F29A12F600019B349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E8688129A12F600019B349 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D1E8688329A12F600019B349 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D1E8688329A12F600019B349 /* MainTabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarViewController.swift; sourceTree = "<group>"; };
 		D1E8688829A12F610019B349 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1E8688B29A12F610019B349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1E8688D29A12F610019B349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -61,6 +64,9 @@
 		D1E868A029A12F610019B349 /* TwitterCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneUITests.swift; sourceTree = "<group>"; };
 		D1E868A229A12F610019B349 /* TwitterCloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitterCloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D1E868B129A131E50019B349 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		D1E868B329A132580019B349 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		D1E868B529A132690019B349 /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		D1E868B729A132750019B349 /* DirectMessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessagesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,7 +148,7 @@
 				D1E868AF29A131BE0019B349 /* Controllers */,
 				D1E8687F29A12F600019B349 /* AppDelegate.swift */,
 				D1E8688129A12F600019B349 /* SceneDelegate.swift */,
-				D1E8688329A12F600019B349 /* ViewController.swift */,
+				D1E8688329A12F600019B349 /* MainTabbarViewController.swift */,
 				D1E8688829A12F610019B349 /* Assets.xcassets */,
 				D1E8688A29A12F610019B349 /* LaunchScreen.storyboard */,
 				D1E8688D29A12F610019B349 /* Info.plist */,
@@ -179,6 +185,9 @@
 			isa = PBXGroup;
 			children = (
 				D1E868B129A131E50019B349 /* HomeViewController.swift */,
+				D1E868B329A132580019B349 /* SearchViewController.swift */,
+				D1E868B529A132690019B349 /* NotificationsViewController.swift */,
+				D1E868B729A132750019B349 /* DirectMessagesViewController.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -421,10 +430,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D1E8688429A12F600019B349 /* ViewController.swift in Sources */,
+				D1E868B429A132580019B349 /* SearchViewController.swift in Sources */,
+				D1E8688429A12F600019B349 /* MainTabbarViewController.swift in Sources */,
 				D1E8688029A12F600019B349 /* AppDelegate.swift in Sources */,
+				D1E868B629A132690019B349 /* NotificationsViewController.swift in Sources */,
 				D1E8688229A12F600019B349 /* SceneDelegate.swift in Sources */,
 				D1E868B229A131E50019B349 /* HomeViewController.swift in Sources */,
+				D1E868B829A132750019B349 /* DirectMessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
