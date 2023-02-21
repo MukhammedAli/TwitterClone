@@ -11,7 +11,7 @@ class HomeViewController: UIViewController {
 
     private let timelineTableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: TweetTableViewCell.identifier)
         return tableView
     }()
     
@@ -38,18 +38,36 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) 
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier, for: indexPath) as? TweetTableViewCell else {return UITableViewCell()}
         
         cell.backgroundColor = .systemBackground
-        cell.textLabel?.text = "Rows are here"
-        
+        cell.delegate = self
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 100    }
+//    
+    
+}
+
+
+extension HomeViewController: TweetTableViewCellDelegate {
+    func tweetTableViewCellDidReply() {
+        print("reply")
+    }
+    
+    func tweetTableViewCellDidRetweet() {
+        print("retweet")
+    }
+    
+    func tweetTableViewCellDidLike() {
+        print("like")
+    }
+    
+    func tweetTableViewCellDidShare() {
+        print("share")
     }
     
     
 }
-
