@@ -26,9 +26,24 @@ class ProfileTableViewHeader: UIView {
         
     }
     
+    private let indicator: UIView = {
+       let view = UIView()
+        view.backgroundColor = UIColor(red: 29/255, green: 161/255, blue: 242/255, alpha: 1)
+        return view
+    }()
+    
     private var selectedTab: Int = 0 {
         didSet {
             print(selectedTab)
+            for i in 0..<tabs.count {
+                UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut) { [weak self] in
+                    self?.stackView.arrangedSubviews[i].tintColor = i == self?.selectedTab ? .label : .secondaryLabel
+                } completion: { _ in
+                    
+                }
+
+                
+            }
         }
     }
     
@@ -36,7 +51,6 @@ class ProfileTableViewHeader: UIView {
     private var tabs: [UIButton] = ["Tweets", "Tweets & Replies", "Media", "Likes"].map { buttonTitle in
         let button = UIButton()
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
-        button.tintColor = .label
         button.setTitle(buttonTitle, for: .normal)
         return button
     }
@@ -155,6 +169,7 @@ class ProfileTableViewHeader: UIView {
         addSubview(followersCountLabel)
         addSubview(followersTextLabel)
         addSubview(stackView)
+        addSubview(indicator)
         configureConstraints()
         configureStackButton()
     }
@@ -162,6 +177,12 @@ class ProfileTableViewHeader: UIView {
     private func configureStackButton() {
         for (i, button) in stackView.arrangedSubviews.enumerated()  {
             guard let button = button as? UIButton else {return}
+            
+            if i == selectedTab {
+                button.tintColor = .label
+            } else {
+                button.tintColor = .secondaryLabel
+            }
             button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
         }
     }
