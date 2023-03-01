@@ -23,6 +23,8 @@
 		D1D40B9F29AA9EDE004AAF18 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = D1D40B9E29AA9EDE004AAF18 /* FirebaseStorageCombine-Community */; };
 		D1D40BA229AB8A45004AAF18 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40BA129AB8A45004AAF18 /* OnboardingViewController.swift */; };
 		D1D40BA429ABAD13004AAF18 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40BA329ABAD13004AAF18 /* RegisterViewController.swift */; };
+		D1D40BA729AC9AB7004AAF18 /* RegisterViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40BA629AC9AB7004AAF18 /* RegisterViewViewModel.swift */; };
+		D1D40BAA29ACDCA0004AAF18 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1D40BA929ACDCA0004AAF18 /* AuthManager.swift */; };
 		D1E8688029A12F600019B349 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8687F29A12F600019B349 /* AppDelegate.swift */; };
 		D1E8688229A12F600019B349 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8688129A12F600019B349 /* SceneDelegate.swift */; };
 		D1E8688429A12F600019B349 /* MainTabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1E8688329A12F600019B349 /* MainTabbarViewController.swift */; };
@@ -70,6 +72,8 @@
 		D1D40B8B29AA9A8B004AAF18 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D1D40BA129AB8A45004AAF18 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = TwitterClone/Views/OnboardingViewController.swift; sourceTree = SOURCE_ROOT; };
 		D1D40BA329ABAD13004AAF18 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		D1D40BA629AC9AB7004AAF18 /* RegisterViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewViewModel.swift; sourceTree = "<group>"; };
+		D1D40BA929ACDCA0004AAF18 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		D1E8687C29A12F600019B349 /* TwitterClone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1E8687F29A12F600019B349 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1E8688129A12F600019B349 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,22 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		D1D40BA529AC77C3004AAF18 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D1D40BA629AC9AB7004AAF18 /* RegisterViewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D1D40BA829ACDC81004AAF18 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				D1D40BA929ACDCA0004AAF18 /* AuthManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		D1E8687329A12F5F0019B349 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +204,8 @@
 		D1E8687E29A12F600019B349 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				D1D40BA829ACDC81004AAF18 /* Networking */,
+				D1D40BA529AC77C3004AAF18 /* ViewModels */,
 				D1E868B929A139940019B349 /* Views */,
 				D1E868AF29A131BE0019B349 /* Controllers */,
 				D1E8687F29A12F600019B349 /* AppDelegate.swift */,
@@ -506,12 +528,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1E868B429A132580019B349 /* SearchViewController.swift in Sources */,
+				D1D40BAA29ACDCA0004AAF18 /* AuthManager.swift in Sources */,
 				D1E8688429A12F600019B349 /* MainTabbarViewController.swift in Sources */,
 				D1E8688029A12F600019B349 /* AppDelegate.swift in Sources */,
 				D1D40BA429ABAD13004AAF18 /* RegisterViewController.swift in Sources */,
 				D1E868B629A132690019B349 /* NotificationsViewController.swift in Sources */,
 				D1E8688229A12F600019B349 /* SceneDelegate.swift in Sources */,
 				D1E868B229A131E50019B349 /* HomeViewController.swift in Sources */,
+				D1D40BA729AC9AB7004AAF18 /* RegisterViewViewModel.swift in Sources */,
 				D1E868FA29A4D1B20019B349 /* ProfileViewController.swift in Sources */,
 				D1E868B829A132750019B349 /* DirectMessagesViewController.swift in Sources */,
 				D1D2536D29A52DC900733AF9 /* ProfileTableViewHeader.swift in Sources */,
