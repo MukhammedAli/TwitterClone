@@ -1,28 +1,28 @@
 //
-//  RegisterViewController.swift
+//  LoginViewController.swift
 //  TwitterClone
 //
-//  Created by  Mukhammed Ali Khamzayev on 26.02.2023.
+//  Created by  Mukhammed Ali Khamzayev on 01.03.2023.
 //
 
 import UIKit
 import Combine
 
-class RegisterViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     private var viewModel = AuthenticationViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     
     private let registerTitleLabel: UILabel = {
        let label = UILabel()
-        label.text = "Create your account"
+        label.text = "Login your account"
         label.font = .systemFont(ofSize: 32, weight: .bold)
         return label
     }()
     
     private let emailTextField: UITextField = {
        let textField = UITextField()
-        textField.keyboardType = .emailAddress 
+        textField.keyboardType = .emailAddress
         textField.attributedPlaceholder = NSAttributedString(
             string: "Email",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
@@ -64,12 +64,13 @@ class RegisterViewController: UIViewController {
             guard let vc = self?.navigationController?.viewControllers.first as? OnboardingViewController else {return}
             vc.dismiss(animated: true )
         }.store(in: &subscriptions)
-    
+        
         viewModel.$error.sink { [weak self] errorString in
             guard let error = errorString else {return}
             self?.presentAlerWithError(with: error)
             
         }.store(in: &subscriptions)
+    
         
     }
     
@@ -98,7 +99,12 @@ class RegisterViewController: UIViewController {
         configureConstraints()
         registerButton.addTarget(self, action: #selector(didTapRegister), for: .touchUpInside)
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
+        registerButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         bindViews()
+    }
+    
+    @objc private func didTapLogin() {
+        viewModel.loginUser()
     }
     
    
