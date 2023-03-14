@@ -8,9 +8,12 @@
 import UIKit
 import SnapKit
 import PhotosUI
+import Combine
 
 class ProfileDataFormViewController: UIViewController {
 
+    private let viewModel = ProfileDataFormViewViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.alwaysBounceVertical = true
@@ -102,8 +105,37 @@ class ProfileDataFormViewController: UIViewController {
         userNameTextField.delegate = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
         configureConstraints()
+        submitButton.addTarget(self, action: #selector(didTapToSubmit), for: .touchUpInside)
         avatarPlaceHolderImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToUpload)))
+        bindViews()
     }
+    
+    
+    @objc private func didTapToSubmit() {
+        viewModel.uploadAvatar()
+    }
+    
+    @objc private func didUpdateDisplayName() {
+        viewModel.displayName = displayNameTextField.text
+        viewModel.validateUserProfileForm()
+    }
+    
+    @objc private func didUpdateUserName() {
+        viewModel.userName = userNameTextField.text
+        viewModel.validateUserProfileForm()
+    }
+    
+    private func bindViews() {
+        displayNameTextField.addTarget(self, action: #selector(didUpdateDisplayName), for: .editingChanged)
+        userNameTextField.addTarget(self, action: #selector(didUpdateUserName), for: .editingChanged)
+        
+        viewModel.$isFormValid.sink { [weak self ] buttonState in
+            self?.submitButton.isEnabled = buttonState
+        }
+        .store(in: &subscriptions)
+    }
+    
+  
     
     @objc private func didTapToUpload() {
         var configuration = PHPickerConfiguration()
@@ -189,6 +221,10 @@ extension ProfileDataFormViewController: UITextViewDelegate , UITextFieldDelegat
         }
     }
     
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel.bio = textView.text
+    }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         scrollView.setContentOffset(CGPoint(x: 0, y: textField.frame.origin.y - 100), animated: true)
     }
@@ -208,6 +244,8 @@ extension ProfileDataFormViewController: PHPickerViewControllerDelegate {
                 if let image = object as? UIImage {
                     DispatchQueue.main.async {
                         self?.avatarPlaceHolderImageView.image = image
+                        self?.viewModel.imageData = image
+                        self?.viewModel.validateUserProfileForm()
                     }
                 }
             }

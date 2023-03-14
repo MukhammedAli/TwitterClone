@@ -11,6 +11,7 @@
 		9B0DE78420CC4CCB0F3AB75A /* Pods_TwitterClone_TwitterCloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9313AEDF37DEFDBD127393AC /* Pods_TwitterClone_TwitterCloneUITests.framework */; };
 		A4EC10D3F368CA25B1047D7A /* Pods_TwitterCloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1830CD3124296EF8D47811D9 /* Pods_TwitterCloneTests.framework */; };
 		D1148D8A29AF80B2000D2BA5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1148D8929AF80B2000D2BA5 /* LoginViewController.swift */; };
+		D170863529BCE7EC00AC7E60 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D170863429BCE7EC00AC7E60 /* StorageManager.swift */; };
 		D18DAA4929B61BE800D58AB6 /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18DAA4829B61BE800D58AB6 /* HomeViewViewModel.swift */; };
 		D18DAA4B29B72E9B00D58AB6 /* ProfileDataFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18DAA4A29B72E9B00D58AB6 /* ProfileDataFormViewController.swift */; };
 		D18DAA4D29B73F4900D58AB6 /* ProfileDataFormViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18DAA4C29B73F4900D58AB6 /* ProfileDataFormViewViewModel.swift */; };
@@ -75,6 +76,7 @@
 		AC9A54844CF2E65E1379852F /* Pods-TwitterClone-TwitterCloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterClone-TwitterCloneUITests.release.xcconfig"; path = "Target Support Files/Pods-TwitterClone-TwitterCloneUITests/Pods-TwitterClone-TwitterCloneUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C5E0615E27FA3CE3DB7997F1 /* Pods-TwitterCloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterCloneTests.debug.xcconfig"; path = "Target Support Files/Pods-TwitterCloneTests/Pods-TwitterCloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1148D8929AF80B2000D2BA5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D170863429BCE7EC00AC7E60 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		D18DAA4829B61BE800D58AB6 /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 		D18DAA4A29B72E9B00D58AB6 /* ProfileDataFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormViewController.swift; sourceTree = "<group>"; };
 		D18DAA4C29B73F4900D58AB6 /* ProfileDataFormViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormViewViewModel.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 			children = (
 				D1D40BA929ACDCA0004AAF18 /* AuthManager.swift */,
 				D19A669C29B1008F001DF503 /*  DatabaseManager.swift */,
+				D170863429BCE7EC00AC7E60 /* StorageManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -556,6 +559,7 @@
 				D1E868B429A132580019B349 /* SearchViewController.swift in Sources */,
 				D1D40BAA29ACDCA0004AAF18 /* AuthManager.swift in Sources */,
 				D19A669D29B1008F001DF503 /*  DatabaseManager.swift in Sources */,
+				D170863529BCE7EC00AC7E60 /* StorageManager.swift in Sources */,
 				D1E8688429A12F600019B349 /* MainTabbarViewController.swift in Sources */,
 				D1148D8A29AF80B2000D2BA5 /* LoginViewController.swift in Sources */,
 				D1E8688029A12F600019B349 /* AppDelegate.swift in Sources */,
